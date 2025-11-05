@@ -54,6 +54,44 @@
     </navigation-rule>
     
     <navigation-rule>
+        <from-view-id>client/Categoria/Accion.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{goTo.categoria}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>client/Categoria.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+    
+        <navigation-rule>
+        <from-view-id>client/Categoria/Fantasia.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{goTo.categoria}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>client/Categoria.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+        <navigation-rule>
+        <from-view-id>client/Categoria/RPG.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{goTo.categoria}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>client/Categoria.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+        <navigation-rule>
+        <from-view-id>client/Categoria/Deportes.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{goTo.categoria}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>client/Categoria.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
         <from-view-id>client/Carrito.xhtml</from-view-id>
         <navigation-case>
             <from-action>#{goTo.facturacion}</from-action>
@@ -78,4 +116,17 @@
             <redirect></redirect>
         </navigation-case>
     </navigation-rule>
+    <application>
+        <resource-bundle>
+            <base-name>resources.msjs</base-name>
+            <var>mensajes</var>
+        </resource-bundle>
+        <locale-config>
+            <default-locale></default-locale>
+            <supported-locale>ca_ES</supported-locale>
+            <supported-locale>en_US</supported-locale>
+            <supported-locale>ja_JP</supported-locale>
+
+        </locale-config>
+    </application>
 </faces-config>
