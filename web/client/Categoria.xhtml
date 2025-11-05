@@ -16,7 +16,23 @@ and open the template in the editor.
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"/>
         <title>Bootstrap Test</title>
     </h:head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+    <h:body>
+        <h:form>
+            <h:commandButton
+                value = "ACCION"
+                action="#{goTo.accion}"/>
+            <h:commandButton
+                value = "FANTASIA"
+                action="#{goTo.fantasia}"/>
+            <h:commandButton
+                value = "RPG"
+                action="#{goTo.rpg}"/>
+            <h:commandButton
+                value = "DEPORTES"
+                action="#{goTo.deportes}"/>
+            <h:commandButton
+                value = "LOGOUT"
+                action="#{goTo.logout}"/>
+        </h:form>
+    </h:body>
 </html>
