@@ -4,6 +4,10 @@
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/WEB-INF/ComprasManager.xml</param-value>
+    </context-param>
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -33,6 +37,7 @@
         <auth-constraint>
             <description>Acceso a los recursos de los clientes REGISTRADOS</description>
             <role-name>clientUser</role-name>
+            <role-name>adminUser</role-name>
         </auth-constraint>
         <user-data-constraint>
             <description/>
@@ -51,5 +56,9 @@
         <description>El cliente
 </description>
         <role-name>clientUser</role-name>
+    </security-role>
+    <security-role>
+        <description>el Admin</description>
+        <role-name>adminUser</role-name>
     </security-role>
 </web-app>

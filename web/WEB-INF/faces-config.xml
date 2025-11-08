@@ -3,6 +3,20 @@
               xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    
+        <application>
+        <resource-bundle>
+            <base-name>resources.msjs</base-name>
+            <var>mensajes</var>
+        </resource-bundle>
+        <locale-config>
+            <default-locale></default-locale>
+            <supported-locale>ca_ES</supported-locale>
+            <supported-locale>en_US</supported-locale>
+            <supported-locale>ja_JP</supported-locale>
+
+        </locale-config>
+    </application>
     <navigation-rule>
         <from-view-id>Bienvenida.xhtml</from-view-id>
         <navigation-case>
@@ -14,7 +28,7 @@
     </navigation-rule>
     
     <navigation-rule>
-        <from-view-id>/client/Categoria.xhtml</from-view-id>
+        <from-view-id>client/Categoria.xhtml</from-view-id>
         <navigation-case>
             <from-action>#{goTo.logout}</from-action>
             <from-outcome>paginaSiguiente</from-outcome>
@@ -24,25 +38,25 @@
         <navigation-case>
             <from-action>#{goTo.fantasia}</from-action>
             <from-outcome>paginaSiguiente</from-outcome>
-            <to-view-id>client/Categoria/Fantasia.xhtml</to-view-id>
+            <to-view-id>client/Fantasia.xhtml</to-view-id>
             <redirect></redirect>
         </navigation-case>
         <navigation-case>
             <from-action>#{goTo.accion}</from-action>
             <from-outcome>paginaSiguiente</from-outcome>
-            <to-view-id>client/Categoria/Accion.xhtml</to-view-id>
+            <to-view-id>client/Accion.xhtml</to-view-id>
             <redirect></redirect>
         </navigation-case>
         <navigation-case>
             <from-action>#{goTo.deportes}</from-action>
             <from-outcome>paginaSiguiente</from-outcome>
-            <to-view-id>client/Categoria/Deportes.xhtml</to-view-id>
+            <to-view-id>client/Deportes.xhtml</to-view-id>
             <redirect></redirect>
         </navigation-case>
         <navigation-case>
             <from-action>#{goTo.rpg}</from-action>
             <from-outcome>paginaSiguiente</from-outcome>
-            <to-view-id>client/Categoria/RPG.xhtml</to-view-id>
+            <to-view-id>client/RPG.xhtml</to-view-id>
             <redirect></redirect>
         </navigation-case>
         <navigation-case>
@@ -54,41 +68,92 @@
     </navigation-rule>
     
     <navigation-rule>
-        <from-view-id>client/Categoria/Accion.xhtml</from-view-id>
+        <from-view-id>client/Accion.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{goTo.categoria}</from-action>
+            <from-action>#{goTo.carrito}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>client/Carrito.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{goTo.logout}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>Bienvenida.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+                <navigation-case>
+            
             <from-outcome>paginaSiguiente</from-outcome>
             <to-view-id>client/Categoria.xhtml</to-view-id>
             <redirect></redirect>
         </navigation-case>
     </navigation-rule>
     
-        <navigation-rule>
-        <from-view-id>client/Categoria/Fantasia.xhtml</from-view-id>
+    <navigation-rule>
+        <from-view-id>client/Fantasia.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{goTo.categoria}</from-action>
+            <from-action>#{goTo.carrito}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>client/Carrito.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{goTo.logout}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>Bienvenida.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+                <navigation-case>
+            
             <from-outcome>paginaSiguiente</from-outcome>
             <to-view-id>client/Categoria.xhtml</to-view-id>
             <redirect></redirect>
         </navigation-case>
     </navigation-rule>
-        <navigation-rule>
-        <from-view-id>client/Categoria/RPG.xhtml</from-view-id>
+    <navigation-rule>
+        <from-view-id>client/RPG.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{goTo.categoria}</from-action>
+            <from-action>#{goTo.carrito}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>client/Carrito.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{goTo.logout}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>Bienvenida.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+                <navigation-case>
+            
             <from-outcome>paginaSiguiente</from-outcome>
             <to-view-id>client/Categoria.xhtml</to-view-id>
             <redirect></redirect>
         </navigation-case>
     </navigation-rule>
-        <navigation-rule>
-        <from-view-id>client/Categoria/Deportes.xhtml</from-view-id>
+    <navigation-rule>
+        <from-view-id>client/Deportes.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{goTo.categoria}</from-action>
+            <from-action>#{goTo.carrito}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>client/Carrito.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{goTo.logout}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>Bienvenida.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+        <navigation-case>
+            
             <from-outcome>paginaSiguiente</from-outcome>
             <to-view-id>client/Categoria.xhtml</to-view-id>
             <redirect></redirect>
         </navigation-case>
+        
+
+
     </navigation-rule>
     
     <navigation-rule>
@@ -105,6 +170,12 @@
             <to-view-id>Bienvenida.xhtml</to-view-id>
             <redirect></redirect>
         </navigation-case>
+        <navigation-case>
+            <from-action>#{goTo.categoria}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>client/Categoria.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -115,18 +186,21 @@
             <to-view-id>Bienvenida.xhtml</to-view-id>
             <redirect></redirect>
         </navigation-case>
+        <navigation-case>
+            <from-action>#{goTo.carrito}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>client/Carrito.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
     </navigation-rule>
-    <application>
-        <resource-bundle>
-            <base-name>resources.msjs</base-name>
-            <var>mensajes</var>
-        </resource-bundle>
-        <locale-config>
-            <default-locale></default-locale>
-            <supported-locale>ca_ES</supported-locale>
-            <supported-locale>en_US</supported-locale>
-            <supported-locale>ja_JP</supported-locale>
+    <navigation-rule>
+        <from-view-id>glassfish_forms/error.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{goTo.bienvenida}</from-action>
+            <from-outcome>paginaSiguiente</from-outcome>
+            <to-view-id>Bienvenida.xhtml</to-view-id>
+            <redirect></redirect>
+        </navigation-case>
+    </navigation-rule>
 
-        </locale-config>
-    </application>
 </faces-config>

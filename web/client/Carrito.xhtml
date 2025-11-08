@@ -1,22 +1,118 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <!-- BOOTSTRAP components CSS & javascript-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"/>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"/>
-        <title>Bootstrap Test</title>
-    </h:head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view locale ="#{formulario.localeCode}">
+
+        <h:head>
+            <title>Carrito de Compras</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+            <h:outputStylesheet>
+                .product {
+                background-color: #f8f9fa;
+                }
+                .card {
+                max-width: 700px;
+                margin: 0 auto;
+                padding: 2rem;
+                }
+                .product img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                margin-right: 20px;
+                border-radius: 8px;
+                }
+            </h:outputStylesheet>
+        </h:head>
+
+        <h:body class="bg-light min-vh-100 d-flex flex-column align-items-center justify-content-start position-relative py-4">
+            <h:form>
+
+                <div class="position-absolute top-0 end-0 m-3 d-flex flex-column align-items-end gap-2">
+                    <h:commandButton
+                        value = "#{mensajes.Volver}"
+                        action="#{goTo.categoria}"/>
+                    <h:commandButton
+                        value = "#{mensajes.logout}"
+                        action="#{goTo.logout}"/>
+                    <div class="dropdown">
+                        <h:selectOneMenu value="#{formulario.localeCode}"
+                                         valueChangeListener="#{formulario.cambioIdioma}"
+                                         onchange="submit();">
+                            <f:selectItem itemValue = "es_ES" itemLabel ="Español"/>
+                            <f:selectItem itemValue = "ca_ES" itemLabel ="Català"/>
+                            <f:selectItem itemValue = "en_US" itemLabel ="English"/>
+
+                        </h:selectOneMenu>
+
+                    </div>
+
+                </div>
+
+                <!-- LOGO -->
+                <div class="d-flex justify-content-center mb-4 mt-3">
+                    <img src="Resources/Placeholder.png" height="180" width="180" class="img-thumbnail" alt="Logo"/>
+                </div>
+
+                <div class="card shadow-sm">
+
+                    <h2 class="text-center mb-4">#{mensajes.CartTitle}</h2>
+
+                    <div class="product p-4 border rounded mb-3">
+                        <div class="d-flex align-items-center">
+                            <img src="Resources/#{goTo.acc}.jpeg" alt=""/>
+                            <div>
+                                <h4>#{goTo.getNombreA()}</h4>
+                                <p class="text-muted mb-1">#{mensajes.Genero}: #{mensajes.Accion}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product p-4 border rounded mb-3">
+                        <div class="d-flex align-items-center">
+                            <img src="Resources/#{goTo.fant}.jpeg" alt=""/>
+                            <div>
+                                <h4>#{goTo.getNombreF()}</h4>
+                                <p class="text-muted mb-1">#{mensajes.Genero}: #{mensajes.Fantasia}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product p-4 border rounded mb-3">
+                        <div class="d-flex align-items-center">
+                            <img src="Resources/#{goTo.dep}.jpeg" alt="Algo más"/>
+                            <div>
+                                <h4>#{goTo.getNombreD()}</h4>
+                                <p class="text-muted mb-1">#{mensajes.Genero}: #{mensajes.Deportes}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product p-4 border rounded mb-3">
+                        <div class="d-flex align-items-center">
+                            <img src="Resources/#{goTo.rpgs}.jpeg" alt="Algo"/>
+                            <div>
+                                <h4>#{goTo.getNombreR()}</h4>
+                                <p class="text-muted mb-1">#{mensajes.Genero}: #{mensajes.RPG}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr/>
+                    <div class="text-end mt-3">
+                        <h:commandButton
+                            value = "#{mensajes.Pagar}"
+                            action="#{goTo.facturacion}"/>
+                        <h:commandButton
+                            value = "#{mensajes.Volver}"
+                            action="#{goTo.categoria}"/>
+                    </div>
+                </div>
+
+                <!-- JS Bootstrap (para el dropdown del idioma) -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </h:form>
+        </h:body>
+    </f:view>
 </html>
